@@ -2,7 +2,6 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import useSWR from "swr";
 import { getAllBooks } from "../../api/api";
-
 import { Box, Typography } from "@mui/material";
 import { UpdateBookModal } from "../ManagingBooksForms/UpdateBookModal";
 import { BookCard } from "./BookCard";

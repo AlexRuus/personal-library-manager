@@ -39,7 +39,7 @@ export const UpdateBookModal = ({
     onSubmit: (newBook) => {
       updateExistingBook(bookData.id, newBook)
         .then((res) => {
-          if (res.status === 200) handleClose();
+          handleClose();
           mutate(
             "http://localhost:3001/books",
             (books: any) => {

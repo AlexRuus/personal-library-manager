@@ -34,7 +34,7 @@ export const AddBookModal = ({ open, setOpen }: Props) => {
     onSubmit: (values) => {
       addBook(values)
         .then((res) => {
-          if (res.status === 201) handleClose();
+          handleClose();
           mutate(
             "http://localhost:3001/books",
             (currentData: any) => [...currentData, values],

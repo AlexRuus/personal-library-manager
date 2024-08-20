@@ -93,18 +93,16 @@ export const BookCard = ({ book, setBookData, setOpenUpdateModal }: Props) => {
                     onClick={() => {
                       deleteBook(book.id)
                         .then((res) => {
-                          if (res.status == 204) {
-                            setError(false);
-                            mutate(
-                              "http://localhost:3001/books",
-                              (currentData: any) => {
-                                return currentData.filter(
-                                  (item: any) => item.id !== book.id
-                                );
-                              },
-                              false
-                            );
-                          }
+                          setError(false);
+                          mutate(
+                            "http://localhost:3001/books",
+                            (currentData: any) => {
+                              return currentData.filter(
+                                (item: any) => item.id !== book.id
+                              );
+                            },
+                            false
+                          );
                         })
                         .catch((e) => {
                           setError(true);
